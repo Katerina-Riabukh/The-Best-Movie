@@ -1,0 +1,33 @@
+.container {
+    width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 40px;
+}
+
+.movieContainer {
+    width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 40px;
+    display: flex;
+}
+
+
+.movieItem {
+    width: 260px;
+    background-color: white;
+    flex-basis: calc((100% - 125px) /5);
+    border: 1px solid gray;
+}
+
+.wraper {
+    display: block;
+    margin-left: 40px;
+    background-color: rgba(255, 255, 255, 0.534);
+    padding: 20px 40px;
+}
+
+.description {
+    font-size: 18px;
+}

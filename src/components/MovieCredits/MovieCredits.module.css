@@ -1,0 +1,34 @@
+.creditsContainer {
+    width: 1440px;
+    padding: 10px 40px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.listItem {
+    list-style: none;
+    background-color: white;
+    flex-basis: calc((100% - 105px) /7);
+    border: 1px solid gray;
+    text-align: center;
+}
+
+.character {
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.name {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}

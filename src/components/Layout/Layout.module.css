@@ -1,0 +1,36 @@
+.section {
+
+    border-bottom: 1px solid black;
+}
+
+.container {
+    width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 40px;
+}
+
+.navlink {
+    display: inline-block;
+    margin-right: 30px;
+    padding: 10px;
+    border-right: 1px solid rgba(9, 9, 121, 0.8087847199426645);
+    border-bottom: 1px solid rgba(9, 9, 121, 0.8087847199426645);
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 24px;
+    text-align: center;
+    min-width: 85px;
+}
+
+.navlink:hover,
+.navlink:focus {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(332deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 0.7219499860491072) 0%, rgba(68, 218, 249, 0.13175390761773462) 62%);
+    color: white;
+    scale: 1.1;
+}
+
+.current {
+    color: red;
+}
