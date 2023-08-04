@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/goit-react-hw-05-movies/static/css/main.e2866c3d.css",
-    "main.js": "/goit-react-hw-05-movies/static/js/main.cbd98638.js",
-    "static/media/greg-rosenke-6QnEf_b47eA-unsplash.jpg": "/goit-react-hw-05-movies/static/media/greg-rosenke-6QnEf_b47eA-unsplash.10f0a6e5f9901426d9cc.jpg",
+    "main.css": "/goit-react-hw-05-movies/static/css/main.f1603096.css",
+    "main.js": "/goit-react-hw-05-movies/static/js/main.02ef6db0.js",
+    "static/media/pexels-francesco-ungaro-396547.jpg": "/goit-react-hw-05-movies/static/media/pexels-francesco-ungaro-396547.1bc7f9c1331aa2bef7e3.jpg",
     "index.html": "/goit-react-hw-05-movies/index.html",
-    "main.e2866c3d.css.map": "/goit-react-hw-05-movies/static/css/main.e2866c3d.css.map",
-    "main.cbd98638.js.map": "/goit-react-hw-05-movies/static/js/main.cbd98638.js.map"
+    "main.f1603096.css.map": "/goit-react-hw-05-movies/static/css/main.f1603096.css.map",
+    "main.02ef6db0.js.map": "/goit-react-hw-05-movies/static/js/main.02ef6db0.js.map"
   },
   "entrypoints": [
-    "static/css/main.e2866c3d.css",
-    "static/js/main.cbd98638.js"
+    "static/css/main.f1603096.css",
+    "static/js/main.02ef6db0.js"
   ]
 }
