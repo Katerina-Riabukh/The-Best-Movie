@@ -1,6 +1,6 @@
 
 
-import { Loader1 } from "components/Loader/Loader"
+import { CatalogMagic } from "components/Loader/Loader"
 import { SearchMovieList } from "components/SearchMovieList/SearchMovieList"
 import { useState } from "react"
 import { Outlet } from "react-router-dom"
@@ -39,17 +39,18 @@ export const MoviesSearch = () => {
     return (
         <>
             <div className={css.container}>
-                <form onSubmit={hamdleSubnmitForm}>
+                <form onSubmit={hamdleSubnmitForm} className={css.form}>
 
-                    <input type="text" onChange={getQuery} />
+                    <button className={css.button}>Search</button>
+                    <input type="text" onChange={getQuery} className={css.input} />
 
-                    <button>Search</button>
+
                 </form>
                 <ul className={css.searchList}>
                     <SearchMovieList response={response} searchValue={searchValue} />
                 </ul>
 
-                {isLoading && <Loader1 />}
+                {isLoading && <CatalogMagic />}
                 <Outlet />
             </div>
         </>

@@ -9,8 +9,9 @@
     width: 1440px;
     margin-left: auto;
     margin-right: auto;
-    padding: 10px 40px;
+    padding: 20px 40px;
     display: flex;
+    /* box-shadow: 0px 10px 13px -7px #3e3e3e, 0px -4px 16px 3px rgba(255, 255, 255, 0); */
 }
 
 
@@ -19,15 +20,28 @@
     background-color: white;
     flex-basis: calc((100% - 125px) /5);
     border: 1px solid gray;
+    box-shadow: 0px 10px 13px -7px #717171, 0px -4px 16px 3px rgba(255, 255, 255, 0);
 }
 
 .wraper {
     display: block;
     margin-left: 40px;
-    background-color: rgba(255, 255, 255, 0.534);
+    background-color: rgba(255, 255, 255, 0.734);
     padding: 20px 40px;
+    box-shadow: 0px 10px 13px -7px #000000, 0px -4px 16px 3px rgba(255, 255, 255, 0);
 }
 
 .description {
     font-size: 18px;
+}
+
+.movieBG {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.534);
+    padding: 40px;
+    box-shadow: 0px 10px 13px -7px #000000, 0px -4px 16px 3px rgba(255, 255, 255, 0);
+}
+
+.movieIMG {
+    box-shadow: 0px 10px 13px -7px #767676, 0px -4px 16px 3px rgba(255, 255, 255, 0);
 }

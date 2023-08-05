@@ -4,4 +4,5 @@
     background-color: white;
     flex-basis: calc((100% - 125px) /5);
     border: 1px solid gray;
+    cursor: pointer;
 }

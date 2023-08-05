@@ -17,6 +17,7 @@
     flex-basis: calc((100% - 105px) /7);
     border: 1px solid gray;
     text-align: center;
+    cursor: pointer;
 }
 
 .character {
