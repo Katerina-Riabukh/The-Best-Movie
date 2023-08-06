@@ -17,6 +17,7 @@ export const MoviesSearch = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [searchValue, setSearchValue] = useState('')
     const [response, setResponse] = useState([])
+    console.log(searchParams);
 
     const getQuery = (e) => {
         setSearchValue(e.target.value)
