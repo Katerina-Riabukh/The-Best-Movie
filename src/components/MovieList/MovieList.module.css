@@ -20,7 +20,7 @@
     background-color: white;
     flex-basis: calc((100% - 125px) /5);
     border: 1px solid gray;
-    box-shadow: 0px 10px 13px -7px #717171, 0px -4px 16px 3px rgba(255, 255, 255, 0);
+    box-shadow: 0px 10px 13px -7px #000000, 0px -4px 16px 3px rgba(255, 255, 255, 0);
 }
 
 .wraper {
@@ -44,4 +44,40 @@
 
 .movieIMG {
     box-shadow: 0px 10px 13px -7px #767676, 0px -4px 16px 3px rgba(255, 255, 255, 0);
+    box-shadow: 0px 10px 13px -7px #000000, 0px -4px 16px 3px rgba(255, 255, 255, 0);
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding: 10px;
+
+}
+
+.tagLine {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.subTitle {
+    font-size: 18px;
+    margin-bottom: 5px;
+
+}
+
+.span {
+    font-weight: 500;
+}
+
+.list {
+    display: flex;
+    gap: 10px;
+}
+
+.picture {
+    width: 260px;
+    height: 390px;
 }

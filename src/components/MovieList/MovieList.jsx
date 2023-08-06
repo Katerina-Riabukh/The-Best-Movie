@@ -9,7 +9,7 @@ export const MovieList = ({ trendingMovies }) => {
             <Link key={id} to={`/MovieInfo/${id}`} className={css.movieItem}>
                 <li>
                     <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={title} />
-                    <p>{title}</p>
+                    <p className={css.title}>{title}</p>
                 </li>
             </Link>
         )

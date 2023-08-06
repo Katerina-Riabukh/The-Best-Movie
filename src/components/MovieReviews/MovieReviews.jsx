@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { getMovieReviews } from "servises/ApiRequestMovie"
 import { MovieReviewsList } from "./MovieReviewsList"
+import css from './Moviereviews.module.css'
 
 
 
@@ -21,9 +22,9 @@ export const MovieReviews = () => {
 
     return (
 
-        <section>
-            <div>
-                <ul>
+        <section className={css.reviewsSection}>
+            <div className={css.reviewsContainer}>
+                <ul className={css.reviewsList}>
                     <MovieReviewsList reviews={reviews} />
                 </ul>
             </div>

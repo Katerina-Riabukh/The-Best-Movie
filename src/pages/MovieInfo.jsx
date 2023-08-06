@@ -16,6 +16,7 @@ export const MovieInfo = () => {
     const [isButton, setIsButton] = useState(false)
 
 
+
     useEffect(() => {
         setIsLoading(true)
         getMovieinfo(MovieInfoId).then((data) => {

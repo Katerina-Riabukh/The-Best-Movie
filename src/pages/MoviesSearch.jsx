@@ -3,15 +3,17 @@
 import { CatalogMagic } from "components/Loader/Loader"
 import { SearchMovieList } from "components/SearchMovieList/SearchMovieList"
 import { useState } from "react"
-import { Outlet } from "react-router-dom"
+import { Outlet, useSearchParams } from "react-router-dom"
 import { searchMovieByKeyword } from "servises/ApiRequestMovie"
 import css from '../components/styles/pages.module.css'
 
 
 
 
+
 export const MoviesSearch = () => {
 
+    const [searchParams, setSearchParams] = useSearchParams()
     const [isLoading, setIsLoading] = useState(false)
     const [searchValue, setSearchValue] = useState('')
     const [response, setResponse] = useState([])
@@ -29,11 +31,21 @@ export const MoviesSearch = () => {
         setIsLoading(true)
         searchMovieByKeyword(searchValue).then(({ results }) => {
             setResponse(results)
+            setSearchParams(`query=${searchValue}`)
         }).catch().finally(() => {
             setIsLoading(false)
         })
-
     }
+
+    // useEffect(() => {
+    //     setIsLoading(true)
+    //     searchMovieByKeyword(searchValue).then(({ results }) => {
+    //         setResponse(results)
+    //         setSearchParams(`query=${searchValue}`)
+    //     }).catch().finally(() => {
+    //         setIsLoading(false)
+    //     })
+    // }, [searchValue, setSearchParams])
 
 
     return (
