@@ -4,6 +4,7 @@ export const MovieReviewsList = ({ reviews }) => {
     if (!reviews) return
 
     return reviews.map(({ author, content, id, updated_at, }) => {
+
         return (
             <>
                 <li key={id} className={css.reviewsItem}>
