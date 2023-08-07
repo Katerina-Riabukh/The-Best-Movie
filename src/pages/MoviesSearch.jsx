@@ -2,14 +2,10 @@
 
 import { CatalogMagic } from "components/Loader/Loader"
 import { SearchMovieList } from "components/SearchMovieList/SearchMovieList"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Outlet, useSearchParams } from "react-router-dom"
 import { searchMovieByKeyword } from "servises/ApiRequestMovie"
 import css from '../components/styles/pages.module.css'
-
-
-
-
 
 export const MoviesSearch = () => {
 
@@ -17,7 +13,7 @@ export const MoviesSearch = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [searchValue, setSearchValue] = useState('')
     const [response, setResponse] = useState([])
-    console.log(searchParams);
+    const query = searchParams.get('query')
 
     const getQuery = (e) => {
         setSearchValue(e.target.value)
@@ -38,31 +34,20 @@ export const MoviesSearch = () => {
         })
     }
 
-    // useEffect(() => {
-    //     setIsLoading(true)
-    //     searchMovieByKeyword(searchValue).then(({ results }) => {
-    //         setResponse(results)
-    //         setSearchParams(`query=${searchValue}`)
-    //     }).catch().finally(() => {
-    //         setIsLoading(false)
-    //     })
-    // }, [searchValue, setSearchParams])
-
+    useEffect(() => {
+        localStorage.setItem('query', `${query}`)
+    }, [query])
 
     return (
         <>
             <div className={css.container}>
                 <form onSubmit={hamdleSubnmitForm} className={css.form}>
-
                     <button className={css.button}>Search</button>
                     <input type="text" onChange={getQuery} className={css.input} />
-
-
                 </form>
                 <ul className={css.searchList}>
                     <SearchMovieList response={response} searchValue={searchValue} />
                 </ul>
-
                 {isLoading && <CatalogMagic />}
                 <Outlet />
             </div>

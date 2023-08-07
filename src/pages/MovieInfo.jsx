@@ -8,12 +8,15 @@ import { EventsLoader } from "components/Loader/Loader";
 import { ButtonBack } from "components/ButtonBack/ButtonBack";
 
 
+
 export const MovieInfo = () => {
 
     const [movieInfo, setMovieinfo] = useState(null);
     const { MovieInfoId } = useParams()
     const [isLoading, setIsLoading] = useState(false)
     const [isButton, setIsButton] = useState(false)
+
+
 
 
 

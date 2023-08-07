@@ -2,11 +2,11 @@ import { PropagateLoader } from "react-spinners"
 import React from 'react'
 import ContentLoader from 'react-content-loader'
 
-export const Loader1 = () => {
+export const Loader = () => {
 
     return (
 
-        <PropagateLoader color="#36d7b7" />
+        <PropagateLoader color="#f9fcfc" style={{ marginLeft: '100px' }} />
     )
 }
 
