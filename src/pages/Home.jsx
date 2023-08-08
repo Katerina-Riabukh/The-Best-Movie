@@ -6,14 +6,17 @@ import css from '../components/styles/pages.module.css'
 
 export const Home = () => {
 
-    const [trendingMovies, setTrendingMovies] = useState([])
+    const [response, setResponse] = useState([])
     const [isLoading, setIsLoading] = useState(false)
+
+
+
 
     useEffect(() => {
         setIsLoading(true)
         ApiRequestMovie().then(({ results }) => {
 
-            setTrendingMovies(results)
+            setResponse(results)
         }).catch().finally(() => {
             setIsLoading(false)
         })
@@ -22,10 +25,8 @@ export const Home = () => {
     return (
         <section>
             <div className={css.container}>
-                <ul className={css.movieList}>
-                    {isLoading && <CatalogMagic />}
-                    <MovieList trendingMovies={trendingMovies} />
-                </ul>
+                {isLoading && <CatalogMagic />}
+                <MovieList response={response} />
             </div>
         </section>
     )

@@ -34,5 +34,3 @@ export const MovieCredits = () => {
     )
 
 }
-
-// { character, name, profile_path }

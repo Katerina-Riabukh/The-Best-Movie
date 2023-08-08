@@ -2,10 +2,10 @@ import { Movie } from "components/MovieList/Movie";
 import css from '../components/styles/pages.module.css'
 
 import { useEffect, useState } from "react"
-import { Link, Outlet, useParams } from "react-router-dom";
+import { Link, NavLink, Outlet, useLocation, useParams } from "react-router-dom";
 import { getMovieinfo } from "servises/ApiRequestMovie";
 import { EventsLoader } from "components/Loader/Loader";
-import { ButtonBack } from "components/ButtonBack/ButtonBack";
+// import { ButtonBack } from "components/ButtonBack/ButtonBack";
 
 
 
@@ -16,9 +16,9 @@ export const MovieInfo = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [isButton, setIsButton] = useState(false)
 
-
-
-
+    const location = useLocation()
+    console.log(`MovieInfo: ${location}`);
+    console.log(location.state);
 
     useEffect(() => {
         setIsLoading(true)
@@ -38,16 +38,20 @@ export const MovieInfo = () => {
         <section className={css.infoSection}>
 
             {isLoading && <EventsLoader />}
-            {isButton && <ButtonBack />}
+            {/* {isButton && <ButtonBack />} */}
+            {isButton && <NavLink className={css.buttonBack} to={location.state?.from} state={{ from: location.state }} >
+                Go back
+            </NavLink>}
+
             <Movie movieInfo={movieInfo} />
 
             <div className={css.infoWraper}>
                 <ul className={css.infoList}>
                     <li className={css.infoItem}>
-                        <Link to={`MovieCredits`}>Credits</Link>
+                        <Link to={`MovieCredits`} state={{ from: location.state }}>Credits</Link>
                     </li>
                     <li className={css.infoItem}>
-                        <Link to={`MovieReviews`}>Reviews</Link>
+                        <Link to={`MovieReviews`} >Reviews</Link>
                     </li>
                 </ul>
             </div>

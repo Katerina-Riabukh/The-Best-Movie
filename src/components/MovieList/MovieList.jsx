@@ -1,17 +1,29 @@
 import css from './MovieList.module.css'
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-export const MovieList = ({ trendingMovies }) => {
+export const MovieList = ({ response, searchValue }) => {
 
-    return trendingMovies.map(({ poster_path, id, title, backdrop_path }) => {
+    const location = useLocation()
 
-        return (
-            <Link key={id} to={`/MovieInfo/${id}`} className={css.movieItem}>
-                <li>
-                    <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={title} />
-                    <p className={css.title}>{title}</p>
-                </li>
-            </Link>
-        )
-    });
+    return (
+
+        <>
+            < ul className={css.movieList} >
+                {
+                    response.map(({ poster_path, id, title }) => {
+
+                        return (<Link key={id} to={`/MovieInfo/${id}_${title}`} state={{ from: location }} className={css.movieItem}>
+                            <li>
+                                <img src={poster_path ? `https://image.tmdb.org/t/p/w500${poster_path}` : '/src/default/images/donnie-rosie-taO2fC7sxDU-unsplash.jpg'} alt={title} />
+                                <p className={css.title}>{title}</p>
+                            </li>
+                        </Link>)
+
+                    })
+                }
+            </ul >
+        </>
+    )
+
+
 }

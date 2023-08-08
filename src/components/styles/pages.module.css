@@ -91,3 +91,26 @@
     border: 1px solid rgba(78, 78, 98, 0.722);
     box-shadow: 0px 10px 13px -7px #717171, 0px -4px 16px 3px rgba(255, 255, 255, 0);
 }
+
+.buttonBack {
+    display: block;
+    padding: 10px;
+    font-size: 20px;
+    background-color: white;
+    cursor: pointer;
+    width: 120px;
+    margin-top: 20px;
+    margin-left: 134px;
+    background: linear-gradient(332deg, rgba(255, 255, 255, 0.403) 0%, rgba(221, 221, 237, 0.722) 0%, rgba(73, 82, 92, 0.132) 62%);
+    background: linear-gradient(332deg, rgba(255, 255, 255, 0.403) 0%, rgba(221, 221, 237, 0.422) 0%, rgba(73, 82, 92, 0.432) 62%);
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+    /* border: 1px solid rgba(78, 78, 98, 0.722); */
+    box-shadow: 0px 10px 13px -7px #717171, 0px -4px 16px 3px rgba(255, 255, 255, 0);
+}
+
+.buttonBack:hover,
+.buttonBack:focus {
+    scale: 1.2;
+}

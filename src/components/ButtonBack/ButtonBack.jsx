@@ -1,5 +1,5 @@
 
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import css from './ButtonBack.module.css'
 // import { useState } from 'react'
 // import { searchMovieByKeyword } from 'servises/ApiRequestMovie'
@@ -7,6 +7,9 @@ import css from './ButtonBack.module.css'
 // import { SlActionUndo } from "react-icons/sl";
 
 export const ButtonBack = () => {
+
+    const location = useLocation()
+    console.log(location);
     // const [response, setResponse] = useState([])
     // const [searchParams, setSearchParams] = useSearchParams()
     // const query = localStorage.getItem('query')
@@ -29,5 +32,12 @@ export const ButtonBack = () => {
 
     )
 }
+
+/**if(location.search = ''){
+<Link to="home"></link>
+} else{
+    <Link to="/MovieSearch"/>
+}
+*/
 
 

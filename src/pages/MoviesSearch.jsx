@@ -1,11 +1,12 @@
 
 
 import { CatalogMagic } from "components/Loader/Loader"
-import { SearchMovieList } from "components/SearchMovieList/SearchMovieList"
+// import { SearchMovieList } from "components/SearchMovieList/SearchMovieList"
 import { useEffect, useState } from "react"
-import { Outlet, useSearchParams } from "react-router-dom"
-import { searchMovieByKeyword } from "servises/ApiRequestMovie"
+import { Outlet, useLocation, useSearchParams } from "react-router-dom"
+import { searchMovieByKeyword, searchMovieByKeyword1 } from "servises/ApiRequestMovie"
 import css from '../components/styles/pages.module.css'
+import { MovieList } from "components/MovieList/MovieList"
 
 export const MoviesSearch = () => {
 
@@ -13,7 +14,10 @@ export const MoviesSearch = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [searchValue, setSearchValue] = useState('')
     const [response, setResponse] = useState([])
-    const query = searchParams.get('query')
+    console.log(searchParams);
+
+    const location = useLocation()
+    const locationState = location.state?.from.from.search;
 
     const getQuery = (e) => {
         setSearchValue(e.target.value)
@@ -35,8 +39,13 @@ export const MoviesSearch = () => {
     }
 
     useEffect(() => {
-        localStorage.setItem('query', `${query}`)
-    }, [query])
+
+        if (!locationState) return
+        searchMovieByKeyword1(locationState).then(({ results }) => {
+
+            setResponse(results)
+        })
+    }, [locationState])
 
     return (
         <>
@@ -45,10 +54,8 @@ export const MoviesSearch = () => {
                     <button className={css.button}>Search</button>
                     <input type="text" onChange={getQuery} className={css.input} />
                 </form>
-                <ul className={css.searchList}>
-                    <SearchMovieList response={response} searchValue={searchValue} />
-                </ul>
                 {isLoading && <CatalogMagic />}
+                <MovieList response={response} searchValue={searchValue} />
                 <Outlet />
             </div>
         </>

@@ -12,6 +12,7 @@ import { MovieReviews } from 'components/MovieReviews/MovieReviews';
 export const App = () => {
 
 
+
   return (
 
     <Routes>

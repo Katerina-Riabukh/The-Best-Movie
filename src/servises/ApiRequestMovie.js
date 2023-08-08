@@ -29,6 +29,13 @@ export const searchMovieByKeyword = (keyword) => {
 
 }
 
+export const searchMovieByKeyword1 = (keyword) => {
+    const search = fetch(`${BASE_URL}/search/movie${keyword}&api_key=${KEY}`)
+        .then(response => response.json())
+    return search;
+
+}
+
 export const getMovieCredits = (id) => {
     const credit = fetch(`${BASE_URL}/movie/${id}/credits?api_key=${KEY}`)
         .then(response => response.json())
@@ -42,10 +49,3 @@ export const getMovieReviews = (id) => {
     return reviews
 }
 
-
-// export const getVideo = (id) => {
-
-//     const video = fetch(`${BASE_URL}/movie/${id}/watch/providers?api_key=${KEY}`)
-//         .then(response => response.json())
-//     return video
-// }
