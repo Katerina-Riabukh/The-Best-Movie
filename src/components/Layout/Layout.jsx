@@ -1,24 +1,28 @@
 // import { MenuToggle } from 'components/Toggle/Toggle';
 import { NavLink, Outlet } from 'react-router-dom';
 // import { FaSistrix } from "react-icons/fa6";
-
 import css from './Layout.module.css'
+import { Suspense } from 'react';
 
-export const Layout = () => {
+
+const Layout = () => {
 
     return (
         <>
             <header className={css.section}>
                 <div className={css.container}>
                     <NavLink to='/' className={css.navlink}>Home</NavLink>
-                    {/* <NavLink to='/MoviesSearch' className={css.navlink}>{FaSistrix}</NavLink> */}
                     <NavLink to='/MoviesSearch' className={css.navlink}>Search</NavLink>
                 </div>
             </header>
             <main>
-                <Outlet />
+                <Suspense>
+                    <Outlet />
+                </Suspense>
             </main>
             <footer></footer>
         </>
     )
 }
+
+export default Layout;

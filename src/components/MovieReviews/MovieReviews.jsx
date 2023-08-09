@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { getMovieReviews } from "servises/ApiRequestMovie"
-import { MovieReviewsList } from "./MovieReviewsList"
+import MovieReviewsList from "./MovieReviewsList"
 import css from './Moviereviews.module.css'
 import { Loader } from "components/Loader/Loader"
 
 
 
-export const MovieReviews = () => {
+const MovieReviews = () => {
 
     const { MovieInfoId } = useParams()
     const [reviews, setReviews] = useState()
@@ -46,3 +46,5 @@ export const MovieReviews = () => {
 
     )
 }
+
+export default MovieReviews;

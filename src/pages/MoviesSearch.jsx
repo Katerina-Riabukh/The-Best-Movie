@@ -1,23 +1,23 @@
 
 
 import { CatalogMagic } from "components/Loader/Loader"
-// import { SearchMovieList } from "components/SearchMovieList/SearchMovieList"
 import { useEffect, useState } from "react"
 import { Outlet, useLocation, useSearchParams } from "react-router-dom"
 import { searchMovieByKeyword, searchMovieByKeyword1 } from "servises/ApiRequestMovie"
 import css from '../components/styles/pages.module.css'
-import { MovieList } from "components/MovieList/MovieList"
+import MovieList from "components/MovieList/MovieList"
 
-export const MoviesSearch = () => {
+const MoviesSearch = () => {
 
     const [searchParams, setSearchParams] = useSearchParams()
     const [isLoading, setIsLoading] = useState(false)
     const [searchValue, setSearchValue] = useState('')
     const [response, setResponse] = useState([])
-    console.log(searchParams);
 
     const location = useLocation()
-    const locationState = location.state?.from.from.search;
+    const locationState = location.search;
+
+    console.log(searchParams);
 
     const getQuery = (e) => {
         setSearchValue(e.target.value)
@@ -61,3 +61,5 @@ export const MoviesSearch = () => {
         </>
     )
 }
+
+export default MoviesSearch;

@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { getMovieCredits } from "servises/ApiRequestMovie"
-import { MovieCreditsList } from "./MovieCreditsList"
+import MovieCreditsList from "./MovieCreditsList"
 import css from './MovieCredits.module.css'
 import { Loader } from "components/Loader/Loader"
 
 
 
-export const MovieCredits = () => {
+const MovieCredits = () => {
 
     const { MovieInfoId } = useParams()
     const [movieCast, setCast] = useState([])
@@ -34,3 +34,5 @@ export const MovieCredits = () => {
     )
 
 }
+
+export default MovieCredits

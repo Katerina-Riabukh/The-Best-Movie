@@ -1,10 +1,10 @@
-import { MovieList } from "components/MovieList/MovieList";
+import MovieList from "components/MovieList/MovieList";
 import { CatalogMagic } from "components/Loader/Loader"
 import { useEffect, useState } from "react";
 import { ApiRequestMovie } from "servises/ApiRequestMovie"
 import css from '../components/styles/pages.module.css'
 
-export const Home = () => {
+const Home = () => {
 
     const [response, setResponse] = useState([])
     const [isLoading, setIsLoading] = useState(false)
@@ -32,3 +32,5 @@ export const Home = () => {
     )
 
 };
+
+export default Home;

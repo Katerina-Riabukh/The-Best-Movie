@@ -1,8 +1,8 @@
 import css from './MovieList.module.css'
 import { Link, useLocation } from "react-router-dom";
 
-export const MovieList = ({ response, searchValue }) => {
 
+const MovieList = ({ response, searchValue }) => {
     const location = useLocation()
 
     return (
@@ -10,11 +10,11 @@ export const MovieList = ({ response, searchValue }) => {
         <>
             < ul className={css.movieList} >
                 {
-                    response.map(({ poster_path, id, title }) => {
+                    response.map(({ poster_path, id, title, backdrop_path }) => {
 
                         return (<Link key={id} to={`/MovieInfo/${id}_${title}`} state={{ from: location }} className={css.movieItem}>
                             <li>
-                                <img src={poster_path ? `https://image.tmdb.org/t/p/w500${poster_path}` : '/src/default/images/donnie-rosie-taO2fC7sxDU-unsplash.jpg'} alt={title} />
+                                <img src={poster_path ? `https://image.tmdb.org/t/p/w500${poster_path}` : '/src/default/images/cinema-4153289_640.jpg'} alt={title} />
                                 <p className={css.title}>{title}</p>
                             </li>
                         </Link>)
@@ -27,3 +27,5 @@ export const MovieList = ({ response, searchValue }) => {
 
 
 }
+
+export default MovieList;
