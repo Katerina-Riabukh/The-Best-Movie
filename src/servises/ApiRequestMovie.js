@@ -1,10 +1,5 @@
-
-
 const BASE_URL = 'https://api.themoviedb.org/3'
 const KEY = 'ca91f553c1d1eddac924c37d8c93fceb'
-// const accountId = '20227278'
-// 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjYTkxZjU1M2MxZDFlZGRhYzkyNGMzN2Q4YzkzZmNlYiIsInN1YiI6IjY0YzVmNDdmNjNhNjk1MDBjOTQ4ZGZlZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.bhXVT3XcQAUtBxJsfAdOML4J1zmap1NhV_vyHMpPw6A'
-
 
 
 export const ApiRequestMovie = () => {
@@ -24,13 +19,6 @@ export const getMovieinfo = (id) => {
 
 export const searchMovieByKeyword = (keyword) => {
     const search = fetch(`${BASE_URL}/search/movie?query=${keyword}&api_key=${KEY}`)
-        .then(response => response.json())
-    return search;
-
-}
-
-export const searchMovieByKeyword1 = (keyword) => {
-    const search = fetch(`${BASE_URL}/search/movie${keyword}&api_key=${KEY}`)
         .then(response => response.json())
     return search;
 

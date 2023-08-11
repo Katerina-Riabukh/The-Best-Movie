@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import istockphoto from '../../default/istockphoto-610780794-612x612.jpg'
 
 
-const MovieList = ({ response, searchValue }) => {
+const MovieList = ({ response }) => {
 
     const location = useLocation()
 

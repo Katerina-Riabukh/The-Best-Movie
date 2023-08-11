@@ -32,13 +32,10 @@ const MovieInfo = () => {
     return (
 
         <section className={css.infoSection}>
-            {isButton && <NavLink className={css.buttonBack} to={backLinkLocationRef.current} state={{ from: location.state }} >
+            {isButton && <NavLink className={css.buttonBack} to={backLinkLocationRef.current} >
                 Go back
             </NavLink>}
             {isLoading && <EventsLoader />}
-            {/* <Suspense fallback={<EventsLoader />}>
-                <Movie movieInfo={movieInfo} />
-            </Suspense> */}
             <Movie movieInfo={movieInfo} />
             <div className={css.infoWraper}>
                 <ul className={css.infoList}>
