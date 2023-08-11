@@ -17,7 +17,6 @@ const MoviesSearch = () => {
     const location = useLocation()
     const locationState = location.search;
 
-    console.log(searchParams);
 
     const getQuery = (e) => {
         setSearchValue(e.target.value)
@@ -54,8 +53,9 @@ const MoviesSearch = () => {
                     <button className={css.button}>Search</button>
                     <input type="text" onChange={getQuery} className={css.input} />
                 </form>
+                {/* <Suspense fallback={<CatalogMagic />}></Suspense> */}
                 {isLoading && <CatalogMagic />}
-                <MovieList response={response} searchValue={searchValue} />
+                <MovieList response={response} searchValue={searchValue} searchParams={searchParams} />
                 <Outlet />
             </div>
         </>

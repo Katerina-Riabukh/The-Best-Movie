@@ -1,5 +1,6 @@
 import { Genres } from './Genres';
 import css from './MovieList.module.css'
+import istockphoto from '../../default/istockphoto-610780794-612x612.jpg'
 
 export const Movie = ({ movieInfo }) => {
     const {
@@ -13,12 +14,10 @@ export const Movie = ({ movieInfo }) => {
         tagline,
     } = movieInfo;
 
-
-
     return (
         <div className={css.movieContainer}>
             <div className={css.movieBG}>
-                <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={title} width='375' className={css.movieIMG} />
+                <img src={poster_path ? `https://image.tmdb.org/t/p/w500${poster_path}` : `${istockphoto}`} alt={title} className={css.movieIMG} />
                 <div className={css.wraper}>
                     <h1 className={css.movietitle}>{title}</h1>
                     <p className={css.tagLine}>{tagline}</p>

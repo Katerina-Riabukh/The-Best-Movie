@@ -9,7 +9,7 @@ import { EventsLoader } from "components/Loader/Loader";
 const MovieInfo = () => {
 
     const [movieInfo, setMovieinfo] = useState(null);
-    const { MovieInfoId } = useParams()
+    const { movieId } = useParams()
     const [isLoading, setIsLoading] = useState(false)
     const [isButton, setIsButton] = useState(false)
     const location = useLocation()
@@ -17,7 +17,7 @@ const MovieInfo = () => {
 
     useEffect(() => {
         setIsLoading(true)
-        getMovieinfo(MovieInfoId).then((data) => {
+        getMovieinfo(movieId).then((data) => {
             setMovieinfo(data)
         }).catch()
             .finally(() => {
@@ -25,7 +25,7 @@ const MovieInfo = () => {
                 setIsButton(true)
             })
 
-    }, [MovieInfoId]);
+    }, [movieId]);
 
     if (!movieInfo) return;
 
@@ -43,10 +43,10 @@ const MovieInfo = () => {
             <div className={css.infoWraper}>
                 <ul className={css.infoList}>
                     <li id="Credits" className={css.infoItem}>
-                        <Link to={`MovieCredits`} state={{ from: location.state }}>Credits</Link>
+                        <Link to={`credits`}>Credits</Link>
                     </li>
                     <li id="Reviews" className={css.infoItem}>
-                        <Link to={`MovieReviews`} >Reviews</Link>
+                        <Link to={`reviews`} >Reviews</Link>
                     </li>
                 </ul>
             </div>

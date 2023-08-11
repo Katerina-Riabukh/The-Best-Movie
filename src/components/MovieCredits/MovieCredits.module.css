@@ -33,3 +33,12 @@
 ::-webkit-scrollbar {
     display: none;
 }
+
+.creditsImg {
+    min-height: 286px;
+}
+
+.error {
+    color: white;
+    font-size: 20px;
+}

@@ -49,8 +49,13 @@
 }
 
 .movieIMG {
+    width: 400px;
     box-shadow: 0px 10px 13px -7px #767676, 0px -4px 16px 3px rgba(255, 255, 255, 0);
     box-shadow: 0px 10px 13px -7px #000000, 0px -4px 16px 3px rgba(255, 255, 255, 0);
+}
+
+.movieImage {
+    height: 394px;
 }
 
 .title {

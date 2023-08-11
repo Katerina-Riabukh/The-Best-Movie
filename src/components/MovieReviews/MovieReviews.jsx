@@ -9,7 +9,7 @@ import { Loader } from "components/Loader/Loader"
 
 const MovieReviews = () => {
 
-    const { MovieInfoId } = useParams()
+    const { movieId } = useParams()
     const [reviews, setReviews] = useState()
     const [isError, setIsError] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
@@ -17,7 +17,7 @@ const MovieReviews = () => {
 
     useEffect(() => {
         setIsLoading(true)
-        getMovieReviews(MovieInfoId).then(({ results }) => {
+        getMovieReviews(movieId).then(({ results }) => {
 
             setReviews(results)
             if (results.length === 0) {
@@ -25,7 +25,7 @@ const MovieReviews = () => {
             }
         }).catch()
             .finally(setIsLoading(false))
-    }, [MovieInfoId])
+    }, [movieId])
 
 
     return (

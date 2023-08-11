@@ -9,17 +9,22 @@ import { Loader } from "components/Loader/Loader"
 
 const MovieCredits = () => {
 
-    const { MovieInfoId } = useParams()
+    const { movieId } = useParams()
     const [movieCast, setCast] = useState([])
     const [isLoading, setIsLoading] = useState(false)
+    const [isError, setIsError] = useState(false)
 
     useEffect(() => {
         setIsLoading(true)
-        getMovieCredits(MovieInfoId).then(({ cast }) => {
+        getMovieCredits(movieId).then(({ cast }) => {
             setCast(cast)
+            console.log(cast);
+            if (cast.length === 0) {
+                setIsError(true)
+            }
         }).catch()
             .finally(setIsLoading(false))
-    }, [MovieInfoId])
+    }, [movieId])
 
     return (
 
@@ -27,7 +32,12 @@ const MovieCredits = () => {
             <div className={css.creditsContainer}>
                 {isLoading && <Loader />}
                 <ul className={css.list}>
-                    <MovieCreditsList movieCast={movieCast} />
+                    {isError
+                        ?
+                        <p className={css.error}>Here is no information about casts...</p>
+                        :
+                        <MovieCreditsList movieCast={movieCast} />
+                    }
                 </ul>
             </div>
         </section>
